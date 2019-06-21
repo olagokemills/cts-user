@@ -1,0 +1,207 @@
+<app-header></app-header>
+
+     <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+    
+
+    <div class="container">
+      <div class="row mt-4 mt-md-5">
+        <div class="col-12 col-xl-8">
+
+          <!-- Card -->
+          <div class="card">
+            <div class="card-body">
+              
+              <!-- Form -->
+              <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
+                 <!-- First Name -->
+              <div class="form-group">
+                  <!-- Label -->
+                  <!-- <label>First Name</label> -->
+                  <!-- Input -->
+                  <input type="text" class="form-control" formControlName="ticketTitle" placeholder="Title">
+                </div>
+
+                <div class="form-group">
+                  <textarea class="form-control form-control-flush form-control-auto" formControlName="ticketDescription" data-toggle="autosize" rows="3" placeholder="Description..."></textarea>
+                </div>
+             
+
+              <!-- Footer -->
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Symbols -->
+                  <small class="text-muted">
+                    0/500
+                  </small>
+
+                </div>
+                <div class="col">
+                  <div [ngClass]="{'alert alert-success' : success, 'alert alert-danger': failure }" role="alert">
+                    <p>{{ message | titlecase }}</p>
+                </div>
+                </div>
+                <div class="col-auto">
+                    <button type="button" type="submit" class="btn btn-outline-primary mb-2">Create Ticket</button>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+
+          
+          <!-- Card -->
+          <div class="card" *ngFor="let item of tickets">
+            <div class="card-body">
+              
+              <!-- Header -->
+              <div class="mb-3">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    
+                    <!-- Avatar -->
+                    <a href="#!" class="avatar">
+                      <img src="assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+
+                  </div>
+                  <div class="col ml-n2">
+
+                    <!-- Title -->
+                    <h4 class="card-title mb-1">
+                      {{ item?.owner }}
+                    </h4>
+
+                    <!-- Time -->
+                    <p class="card-text small text-muted">
+                      <!-- <span class="fe fe-clock"></span> <time datetime="2018-05-24">4hr ago</time> -->
+                    </p>
+                    
+                  </div>
+                  <div class="col-auto">
+                    
+                    <!-- Dropdown -->
+                    <!-- <div class="dropdown">
+                      <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fe fe-more-vertical"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#!" class="dropdown-item">
+                          Action
+                        </a>
+                        <a href="#!" class="dropdown-item">
+                          Another action
+                        </a>
+                        <a href="#!" class="dropdown-item">
+                          Something else here
+                        </a>
+                      </div>
+                    </div> -->
+                    
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+
+              <!-- Text -->
+              <p class="mb-3">
+                <strong>{{ item?.title }}</strong>
+              </p>
+              
+              <p class="mb-4">
+                  {{ item?.description }}
+              </p>
+
+              <!-- Image -->
+              <p class="text-center mb-3">
+                <!-- <img src="assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded"> -->
+              </p>
+
+              <!-- Buttons -->
+              
+              <div class="mb-3">
+                <div class="row">
+                  <div class="col">
+
+          
+
+                  </div>
+                  <div class="col-auto mr-n3">
+
+                 
+
+                  </div>
+                  <div class="col-auto">
+
+                    <a class="btn btn-sm btn-white">
+                      {{ item.status }}
+                    </a>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+
+              <!-- Divider -->
+              <hr>
+
+              <!-- Comments -->
+              <div class="comment mb-3" *ngIf="item.response !== 'null'">
+                <div class="row">
+                  <div class="col-auto">
+
+                    <!-- Avatar -->
+                    <a class="avatar avatar-sm" href="profile-posts.html">
+                      <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                    </a>
+
+                  </div>
+                  <div class="col ml-n2">
+                    
+                    <!-- Body -->
+                    <div class="comment-body">
+
+                      <div class="row">
+                        <div class="col">
+
+                          <!-- Title -->
+                          <h5 class="comment-title">
+                            CTS Admin
+                          </h5>
+
+                        </div>
+                        <div class="col-auto">
+
+                          <!-- Time -->
+                          <time class="comment-time">
+                            11:12
+                          </time>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                      <!-- Text -->
+                      <p class="comment-text">
+                        {{ item.response }}
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+
+            </div>
+          </div>
+
+        
+          
+        </div>
+        <div class="col-12 col-xl-4">
+          
+
+        </div>
+      </div>
+    </div>
+    
+  </div> <!-- / .main-content -->

@@ -1,0 +1,186 @@
+<app-header></app-header> 
+ 
+ <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+    
+    <!-- HEADER -->
+    <div class="header">
+
+        <!-- Image -->
+        
+        <div class="container">
+
+          <!-- Body -->
+          <div class="header-body mt-n5 mt-md-n6">
+            <div class="row align-items-end">
+              <div class="col-auto">
+                
+                <!-- Avatar -->
+                <div class="avatar avatar-xxl header-avatar-top">
+               
+                    </div>
+
+              </div>
+            </div> <!-- / .row -->
+            <div class="row align-items-center">
+            <h2> Payment for {{global.courseDetails.course}}</h2>
+            </div>
+          </div> <!-- / .header-body -->
+
+        </div>
+      </div>
+    
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="row">
+          
+        <div class="col-12 col-xl-8">
+            <div [ngClass]="{'alert alert-success' : success, 'alert alert-danger': failure }" role="alert">
+                <p>{{ message | titlecase }}</p>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-xl-10">
+
+
+                      <h1>Enter your details</h1> 
+                      
+                      <div class="card">
+                          <div class="card-body">
+                            
+                            <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+                              <div class="form-row">
+                                <div class="col-12 col-md-10 mb-3">
+                                  <label for="validationServer01">Name on Card</label>
+                                  <input type="text" class="form-control" formControlName="nameoncard" placeholder="John Doe" required>
+                                 
+                                </div>
+                              </div>
+
+                              <div class="form-row">
+                                  <div class="col-12 col-md-6 mb-3">
+                                    <label for="validationServer03">Card Number</label>
+                                    <input type="text" class="form-control" formControlName="cardnumber" placeholder="US telephone example" data-mask="(000) 000-0000">
+                                  </div>
+                                  <div class="col-12 col-md-3 mb-3">
+                                    <label for="validationServer04">Expiry</label>
+                                    <input type="text" class="form-control" formControlName="expiry" placeholder="US data example" data-mask="00/00">
+                                  </div>
+                                  <div class="col-12 col-md-3 mb-3">
+                                      <label for="validationServer04">CVV2</label>
+                                      <input type="text" class="form-control" formControlName="cvv2" placeholder="US data example" maxlength="3">
+                                    </div>
+                                </div>
+                              <button class="btn btn-primary" [disabled]="!paymentForm.valid" type="submit">Pay Now (${{global.courseDetails?.fee}} )</button>
+                            </form>
+          
+                          </div>
+                        </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                </div>
+              </div>
+        
+        </div>
+
+
+
+        <div class="col-12 col-xl-4">
+          
+          <!-- Card -->
+          <div class="card">
+            <div class="card-body">
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Fee 
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <small class="text-muted">
+                    ${{global.courseDetails.fee}}
+                  </small>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                   Duration
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <a class="small">
+                    {{global.courseDetails.duration}}
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Category
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <small class="text-muted">
+                    {{global.courseDetails.category}}
+                  </small>
+
+                </div>
+              </div> <!-- / .row -->
+              
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Start Date
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <a class="small">
+                    {{global.courseDetails.startdate}}
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div>
+
+  </div> <!-- / .main-content -->
+

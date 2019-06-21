@@ -1,0 +1,90 @@
+<app-header></app-header>
+  
+
+  <!-- MAIN CONTENT
+  ================================================== -->
+  <div class="main-content">
+    
+
+    <!-- HEADER -->
+    <div class="header">
+
+      <!-- Image -->
+      
+      <div class="container">
+
+        <!-- Body -->
+        <div class="header-body mt-n5 mt-md-n6">
+          <div class="row align-items-end">
+            <div class="col-auto">
+              
+              <!-- Avatar -->
+              <div class="avatar avatar-xxl header-avatar-top">
+             
+                  </div>
+
+            </div>
+          </div> <!-- / .row -->
+          <div class="row align-items-center">
+          <h2> Available Courses</h2>
+          </div>
+        </div> <!-- / .header-body -->
+
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let course of courses" class="col-12 col-lg-6">
+          
+          <!-- Card -->
+          <div class="card">
+            <div class="card-body">                
+              <!-- Avatar -->
+              <div class="text-center">
+                <a href="team-overview.html" class="card-avatar avatar avatar-lg mx-auto">
+                  <img src="assets/img/avatars/teams/team-logo-1.jpg" alt="" class="avatar-img rounded">
+                </a>
+              </div>
+
+              <!-- Title -->
+              <h2 class="card-title text-center mb-3 pointer">
+                <a (click)="goToCourseDetails(course)">{{ course?.course | titlecase }}</a>
+              </h2>
+
+              <!-- Text -->
+              <p class="card-text text-center text-muted mb-4">
+                {{ course.description }}
+              </p>
+
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Time -->
+                  <p class="card-text small text-muted">
+                    <i class="fe fe-bookmark"></i> £{{ course?.fee }}
+                  </p>
+
+                </div>
+                <div class="col-auto">
+                 <!-- Time -->
+                 <p class="card-text small text-muted">
+                  <i class="fe fe-clock"></i> {{ course?.duration }}
+                </p>
+
+                  
+                </div>
+              </div> <!-- / .row -->
+
+            </div> <!-- / .card-body -->
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div>
+  </div> <!-- / .main-content -->
+
