@@ -41,7 +41,7 @@
 
                 <!-- Card -->
                 <div class="card">
-                  <a href="project-overview.html">
+                  <a (click)="goToEventDetail(event)">
                     <img src="assets/img/avatars/projects/project-3.jpg" alt="..." class="card-img-top">
                   </a>
                   <div class="card-body">
@@ -50,7 +50,7 @@
                     
                         <!-- Title -->
                         <h4 class="card-title mb-2 name">
-                          <a href="project-overview.html">{{ event.title }}</a>
+                          <a (click)="goToEventDetail(event)">{{ event.title }}</a>
                         </h4>
 
                         <!-- Subtitle -->

@@ -1,0 +1,306 @@
+<app-header></app-header>
+ 
+ <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">    
+    
+    <!-- HEADER -->
+    <div class="header">
+
+        <!-- Image -->
+        
+        <div class="container-fluid">
+
+          <!-- Body -->
+          <div class="header-body mt-n5 mt-md-n6">
+            <div class="row align-items-end">
+              <div class="col-auto">
+                
+                <!-- Avatar -->
+                <div class="avatar avatar-xxl header-avatar-top">
+               
+                    </div>
+
+              </div>
+            </div> <!-- / .row -->
+            <div class="row align-items-center">
+            <h2> {{global.courseDetails.course }}</h2>
+            </div>
+          </div> <!-- / .header-body -->
+
+        </div>
+      </div>
+    
+    <!-- CONTENT -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-xl-8">
+          
+            <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-xl-10">
+
+
+                      <h1>Course Description</h1> 
+                      
+                      <p>
+                        {{global.courseDetails.description}}
+                      </p>
+
+                    </div>
+                    <div class="col-xl-10">
+                      <div class="tab-content course-menu-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                          <div class="learning-system">
+                            <h4>What Will I Learn?</h4>
+                            <p>Learn cutting-edge deep reinforcement learning algorithms—from Deep Q-Networks (DQN) to Deep Deterministic Policy Gradients (DDPG). Apply these concepts to train agents to walk, drive, or perform other complex tasks.</p>
+                          <ul>
+                            <li>
+                              <div class="single-way">
+                                <h4>Visual learning tips</h4>
+                                <p>Graphic designers create visual concepts that inspire,  and transform. Learn how to use industry-leading software to build innovative.</p>	
+                              </div>
+                            </li>
+                            <li>
+                              <div class="single-way">
+                                <h4>How improve visual design</h4>
+                                <p>Remember skills can be developed with practice. Design crash course through interactive tutorials. Follow design and read design books. Start using tools like Canva and pair it with SocialPilot. </p>	
+                              </div>
+                            </li>
+                            <li>
+                              <div class="single-way">
+                                <h4>Value of visual design</h4>
+                                <p>Graphic design is process of visual communication problem solving using one or more of typography, photography and illustration. The field is considered a subset of visual.</p>	
+                              </div>
+                            </li>
+                            <li>
+                              <div class="single-way">
+                                <h4>Difference Between Visual Design and Graphic Design</h4>
+                                <p>User interface (UI) designers are responsible for the “look and feel” of a website, app, or other product. In other words, they're the ones who add colors, pair typefaces, and set layouts. </p>	
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="requirements">
+                          <h4>Requirements</h4>
+                          <ul>
+                            <li><i class="fas fa-check"></i> Understand what visual learning is for and how it is used.</li>
+                            <li><i class="fas fa-check"></i> Need knowledge of photoshop and basic knowledge of indesign.</li>
+                            <li><i class="fas fa-check"></i> Preferable to have experience with PS, Sketch, Indesign and  Adobe XD.</li>
+                            <li><i class="fas fa-check"></i> Preferable to understand word embeddings.</li>										
+                          </ul>
+                        </div>
+                        <div class="description">
+                            <h4>Description</h4>
+                            <p>Your ability to use type is one of the things that differentiates graphic design from other visual professions. A big part of graphic design is understanding typography, developing your knowledge of typefaces, and how to apply them in your design. This will be a constant study throughout your career.</p>
+                          </div>
+      
+                        </div>
+                        <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
+                          <div class="blog-author instructor-profile">
+                          <div class="media">
+                            <img src="images/speaker-1.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5>Dr. Stavens Madison</h5>
+                              <p>He attended and graduated from medical school in 1976, having over 42 years of diverse experience, especially in Cardiovascular Disease (Cardiology).</p>							    
+                              <div class="social-link">
+                              <ul>
+                                <li class="facebook"><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
+                                <li class="pinterest"><a href="#"> <i class="fab fa-pinterest"></i> </a></li>	
+                                <li class="instagram"><a href="#"> <i class="fab fa-instagram"></i> </a></li>											
+                                <li class="twitter"><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                              </ul>					
+                            </div>
+                            </div>
+                          </div>							
+                        </div>
+                        </div>
+                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                        </div>
+                      </div>
+      
+
+                    </div>
+                  </div> <!-- / .row -->
+                </div>
+              </div>
+        
+        </div>
+
+
+
+        <div class="col-12 col-xl-4">
+          
+          <!-- Card -->
+          <div class="card">
+            <div class="card-body">
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Fee 
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <small class="text-muted">
+                    ${{ global.courseDetails.fee }}
+                  </small>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                   Duration
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <a class="small">
+                    {{ global.courseDetails.duration }}
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Category
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <small class="text-muted">
+                    {{ global.courseDetails.category }}
+                  </small>
+
+                </div>
+              </div> <!-- / .row -->
+              
+              <!-- Divider -->
+              <hr>
+
+              <div class="row align-items-center">
+                <div class="col">
+                  
+                  <!-- Title -->
+                  <h5 class="mb-0">
+                    Start Date
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+                  
+                  <a class="small">
+                    {{ global.courseDetails.startdate }}
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <hr>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modalMembers" >Register</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div>
+
+  </div> <!-- / .main-content -->
+
+
+
+  <!-- Modal -->
+
+   <!-- Modal: Members -->
+   <div class="modal fade" id="modalMembers" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-card card" data-toggle="lists" data-lists-values='["name"]'>
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+
+                  <!-- Title -->
+                  <h4 class="card-header-title" id="exampleModalCenterTitle">
+                    Pay For Course
+                  </h4>
+              
+                </div>
+                <div class="col-auto">
+
+                  <!-- Close -->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              
+                </div>
+              </div> <!-- / .row -->
+            </div>
+            <div class="card-header">
+                <h3>Select your prefered payment plan</h3>
+            </div>
+            <div class="card-body">
+
+              <!-- List group -->
+              <ul class="list-group list-group-flush list my-n3" *ngFor="let portal of portals">
+                <li class="list-group-item px-0">
+              
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                  
+                      <!-- Avatar -->
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Title -->
+                      <h4 class="mb-1 name">
+                        <a>{{ portal?.name | titlecase }}</a>
+                      </h4>
+
+                      <!-- Time -->
+                      <p class="small mb-0">
+                        <span class="text-success">●</span> Available
+                      </p>
+                  
+                    </div>
+                    <div class="col-auto">
+                  
+                      <!-- Button -->
+                      <a (click)="goToPayment(portal.name)" modal-di class="btn btn-sm btn-white">
+                        Proceed
+                      </a>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

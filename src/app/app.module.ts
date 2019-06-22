@@ -20,6 +20,8 @@ import { PaymentComponent } from '../routes/payment/payment.component';
 import { EventsComponent } from '../routes/events/events.component';
 import { TicketComponent } from '../routes/ticket/ticket.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { EventDetailsComponent } from 'src/routes/events-details/event-details.component';
+import { BlogComponent } from 'src/routes/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { HeaderComponent } from '../components/header/header.component';
     PaymentComponent,
     EventsComponent,
     TicketComponent,
-    HeaderComponent
+    HeaderComponent,
+    EventDetailsComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

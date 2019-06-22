@@ -13,7 +13,8 @@ import { CourseDetailsComponent } from 'src/routes/course-details/course-details
 import { PaymentComponent } from 'src/routes/payment/payment.component';
 import { EventsComponent } from 'src/routes/events/events.component';
 import { TicketComponent } from 'src/routes/ticket/ticket.component';
-
+import { EventDetailsComponent } from 'src/routes/events-details/event-details.component';
+import  { BlogComponent } from 'src/routes/blog/blog.component';
 
 const routes: Routes = [
   { path: '', component: SignInComponent },
@@ -27,9 +28,11 @@ const routes: Routes = [
   { path: 'course-details', component: CourseDetailsComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'blog', component: BlogComponent},
   { path: 'tickets', component: TicketComponent},
   { path: 'events', component: EventsComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
+  { path: 'event-details', component: EventDetailsComponent }
 ];
 
 @NgModule({

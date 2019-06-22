@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth/auth.service';
 import { GlobalService } from 'src/services/global/global.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-events',
@@ -9,7 +11,7 @@ import { GlobalService } from 'src/services/global/global.service';
 })
 export class EventsComponent implements OnInit {
 
-  constructor(private api: AuthService, public global: GlobalService) { }
+  constructor(private api: AuthService, public global: GlobalService,  private router: Router) { }
   events: any;
 
   ngOnInit() {
@@ -24,6 +26,11 @@ export class EventsComponent implements OnInit {
       },
       err => console.error()
     )
+  }
+
+  goToEventDetail(data) {
+    this.global.eventDetail = data;
+    this.router.navigate(['event-details']);
   }
 
 }
