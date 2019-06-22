@@ -139,6 +139,47 @@ export class AuthService {
     return this.http.get(url + 'courses', httpOption);
   }
 
+  getPosts() {
+    let token = sessionStorage.getItem('x-lt');
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+    let data = JSON.parse(sessionStorage.getItem('ud'));
+   // console.log(data);
+    return this.http.get(url + 'posts', httpOption);
+  }
+
+  getCategories() {
+    let token = sessionStorage.getItem('x-lt');
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+    let data = JSON.parse(sessionStorage.getItem('ud'));
+    console.log(data);
+    return this.http.get(url + 'posts/categories', httpOption);
+  }
+  
+
+  getComments() {
+    let token = sessionStorage.getItem('x-lt');
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+    let data = JSON.parse(sessionStorage.getItem('ud'));
+   console.log(data);
+    return this.http.get(url + 'posts/comments', httpOption);
+  }
+  
+
   getPortal() {
     let token = sessionStorage.getItem('x-lt');
     let httpOption = {

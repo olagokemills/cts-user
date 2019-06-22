@@ -15,11 +15,11 @@
     </a>
 
     <!-- Form -->
-    <form class="form-inline mr-4 d-none d-lg-flex" [formGroup]="dataForm">
+    <!-- <form class="form-inline mr-4 d-none d-lg-flex" [formGroup]="dataForm">
       <div class="input-group input-group-rounded input-group-merge" data-toggle="lists"
-        data-options='{"valueNames": ["name"]}'>
+        data-options='{"valueNames": ["name"]}'> -->
         <!-- Input -->
-        <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown"
+        <!-- <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown"
           placeholder="Search" aria-label="Search" />
         <div class="input-group-prepend">
           <div class="input-group-text">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-    </form>
+    </form> -->
 
     <!-- User -->
     <div class="navbar-user">
@@ -55,9 +55,9 @@
     <!-- Collapse -->
     <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
       <!-- Form -->
-      <form class="mt-4 mb-3 d-md-none" [formGroup]="search2Form">
+      <!-- <form class="mt-4 mb-3 d-md-none" [formGroup]="search2Form">
         <input type="search" class="form-control form-control-rounded" placeholder="Search" aria-label="Search" />
-      </form>
+      </form> -->
 
       <!-- Navigation -->
       <ul class="navbar-nav mr-auto">
@@ -77,6 +77,12 @@
           <a routerLink="/events" role="button" routerLinkActive="active" class="nav-link" id="topnavPages"
             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Events
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/blog" role="button" routerLinkActive="active" class="nav-link" id="topnavPages"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Blog
           </a>
         </li>
         <li class="nav-item">
