@@ -106,12 +106,20 @@
             <!-- Divider -->
             <hr>
 
-            <!-- Comments -->
+            <div class="mb-3" *ngIf="!comments || comments == 'No Content'">
+              No Content, Sonny
+            </div> 
+         
 
-            <div class="comment mb-3">
+            
+            <!-- Comments -->
+            <div *ngIf="comments || comments != 'No content'">
+              
+               <span *ngFor="let comm of comments">
+
+            <div class="comment mb-3" *ngIf="item.titleid == comm.titleid">
               <div class="row">
                 <div class="col-auto">
-
                   <!-- Avatar -->
                   <a class="avatar" href="profile-posts.html">
                     <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
@@ -128,7 +136,7 @@
 
                         <!-- Title -->
                         <h5 class="comment-title">
-                          Miyah Miles
+                          {{comm.username}}
                         </h5>
 
                       </div>
@@ -136,7 +144,7 @@
 
                         <!-- Time -->
                         <time class="comment-time">
-                          11:12
+                          {{comm.date}}
                         </time>
 
                       </div>
@@ -144,7 +152,7 @@
 
                     <!-- Text -->
                     <p class="comment-text">
-                      I love this Dianna! Let's add to our wiki tomorrow!
+                      {{comm.body}}
                     </p>
 
                   </div>
@@ -153,50 +161,10 @@
               </div> <!-- / .row -->
             </div>
 
-            <div class="comment mb-3">
-              <div class="row">
-                <div class="col-auto">
+            </span>
+            
 
-                  <!-- Avatar -->
-                  <a class="avatar" href="profile-posts.html">
-                    <img src="assets/img/avatars/profiles/avatar-6.jpg" alt="..." class="avatar-img rounded-circle">
-                  </a>
-
-                </div>
-                <div class="col ml-n2">
-                  
-                  <!-- Body -->
-                  <div class="comment-body">
-
-                    <div class="row">
-                      <div class="col">
-
-                        <!-- Title -->
-                        <h5 class="comment-title">
-                          Ryu Duke
-                        </h5>
-
-                      </div>
-                      <div class="col-auto">
-
-                        <!-- Time -->
-                        <time class="comment-time">
-                          11:12
-                        </time>
-
-                      </div>
-                    </div> <!-- / .row -->
-
-                    <!-- Text -->
-                    <p class="comment-text">
-                      I'm onboard for sure. Sign me up to prototype anytime.
-                    </p>
-
-                  </div>
-
-                </div>
-              </div> <!-- / .row -->
-            </div>
+            </div>   
 
             <!-- Divider -->
             <hr>
@@ -214,9 +182,10 @@
               <div class="col ml-n2">
 
                 <!-- Input -->
-                <form class="mt-1" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+                <form class="mt-1" [formGroup]="commentForm" (ngSubmit)="onSubmit(item)">
                   <label class="sr-only">Leave a comment...</label>
-                  <textarea class="form-control form-control-flush" formControlName="userComment" data-toggle="autosize" rows="1" placeholder="Leave a comment"></textarea>
+                  <textarea class="form-control form-control-flush" formControlName="body" data-toggle="autosize" rows="1" placeholder="Leave a comment"></textarea>
+                  <button type="submit" class="btn btn-sm btn-primary">Post</button>
                 </form>
 
               </div>
@@ -248,58 +217,20 @@
         <div class="card">
           <div class="card-body">
                 <h3 class="text-center">Category</h3>
-            <div class="row align-items-center">
+            <div class=""  *ngFor="let c of cat" >
+            <div class="row align-items-center" >
               <div class="col">
                 
                 <!-- Title -->
-                <h5 class="mb-0">
-                  Birthday
-                </h5>
+                <a  href="#" class="mb-0">
+                  {{ c?.name }}
+                </a>
 
               </div>
             </div> <!-- / .row -->
-
+                <hr>
             <!-- Divider -->
-            <hr>
-
-            <div class="row align-items-center">
-              <div class="col">
-                
-                <!-- Title -->
-                <h5 class="mb-0">
-                  Joined
-                </h5>
-
-              </div>
-            </div> <!-- / .row -->
-
-            <!-- Divider -->
-            <hr>
-
-            <div class="row align-items-center">
-              <div class="col">
-                
-                <!-- Title -->
-                <h5 class="mb-0">
-                  Location
-                </h5>
-
-              </div>
-            </div> <!-- / .row -->
-
-            <!-- Divider -->
-            <hr>
-
-            <div class="row align-items-center">
-              <div class="col">
-                
-                <!-- Title -->
-                <h5 class="mb-0">
-                  Website
-                </h5>
-
-              </div>
-            </div> <!-- / .row -->
+             </div>
 
           </div>
         </div>

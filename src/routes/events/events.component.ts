@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-
-  constructor(private api: AuthService, public global: GlobalService,  private router: Router) { }
   events: any;
+  constructor(private api: AuthService, public global: GlobalService,  private router: Router) { }
+
 
   ngOnInit() {
     this.getAllEvents();
@@ -28,8 +28,8 @@ export class EventsComponent implements OnInit {
     )
   }
 
-  goToEventDetail(data) {
-    this.global.eventDetail = data;
+  goToEventDetails(data) {
+    this.global.eventDetails = data;
     this.router.navigate(['event-details']);
   }
 

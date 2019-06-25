@@ -22,6 +22,7 @@ import { TicketComponent } from '../routes/ticket/ticket.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { EventDetailsComponent } from 'src/routes/events-details/event-details.component';
 import { BlogComponent } from 'src/routes/blog/blog.component';
+import { CategoryViewComponent } from 'src/routes/category-view/category-view.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BlogComponent } from 'src/routes/blog/blog.component';
     TicketComponent,
     HeaderComponent,
     EventDetailsComponent,
-    BlogComponent
+    BlogComponent,
+    CategoryViewComponent
   ],
   imports: [
     BrowserModule,

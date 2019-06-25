@@ -162,7 +162,7 @@ export class AuthService {
     }
     let data = JSON.parse(sessionStorage.getItem('ud'));
     console.log(data);
-    return this.http.get(url + 'posts/categories', httpOption);
+    return this.http.get(url + 'posts/category', httpOption);
   }
   
 

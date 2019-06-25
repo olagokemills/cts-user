@@ -15,6 +15,7 @@ import { EventsComponent } from 'src/routes/events/events.component';
 import { TicketComponent } from 'src/routes/ticket/ticket.component';
 import { EventDetailsComponent } from 'src/routes/events-details/event-details.component';
 import  { BlogComponent } from 'src/routes/blog/blog.component';
+import { CategoryViewComponent } from 'src/routes/category-view/category-view.component';
 
 const routes: Routes = [
   { path: '', component: SignInComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent},
   { path: 'tickets', component: TicketComponent},
   { path: 'events', component: EventsComponent },
+  { path: 'category-view', component: CategoryViewComponent },
   { path: '**', component: NotFoundComponent },
   { path: 'event-details', component: EventDetailsComponent }
 ];

@@ -11,8 +11,9 @@ export class GlobalService {
   };
   courseDetails: any;
   paymentPortal: any;
-  eventDetail : any;
+  eventDetails : any;
   postDetails :any;
+  categoryPosts: any;
 
   constructor(private router: Router) { }
 
