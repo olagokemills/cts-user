@@ -46,6 +46,8 @@ export class BlogComponent implements OnInit {
           this.message = 'Comment created successfully';
           this.success = true;
 
+          location.reload();
+
         })
         .catch(err => {
           console.error(err);
@@ -89,6 +91,11 @@ export class BlogComponent implements OnInit {
   goToPostDetails(data) {
     this.global.postDetails = data;
     this.router.navigate(['post-details']);
+  }
+
+  gotoCategoryDetails(data){
+    this.global.categoryPosts = data;
+    this.router.navigate(['category-view']);
   }
 
 }

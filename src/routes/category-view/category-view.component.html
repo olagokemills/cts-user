@@ -1,0 +1,242 @@
+<app-header></app-header>
+
+<div class="main-content">
+
+        <!-- HEADER -->
+        <div class="header">
+
+                <!-- Image -->
+                
+                <div class="container">
+        
+                  <!-- Body -->
+                  <div class="header-body mt-n5 mt-md-n6">
+                    <div class="row align-items-end">
+                      <div class="col-auto">
+                        
+                        <!-- Avatar -->
+                        <div class="avatar avatar-xxl header-avatar-top">
+                       
+                            </div>
+        
+                      </div>
+                    </div> <!-- / .row -->
+                    <div class="row align-items-center">
+                    <h2> All Blog Posts</h2>
+                    </div>
+                  </div> <!-- / .header-body -->
+        
+                </div>
+              </div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-xl-8">
+        <!-- Card -->
+        <div class="card" *ngFor="let item of posts">
+          <div class="card-body">
+            
+            <!-- Header -->
+            <div class="mb-3">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  
+                  <!-- Avatar -->
+                  <a href="#!" class="avatar">
+                    <img src="assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+
+                </div>
+                <div class="col ml-n2">
+
+                  <!-- Title -->
+                  <h4 class="card-title mb-1">
+                        {{ item?.author }}
+                  </h4>
+
+                  <!-- Time -->
+                  <p class="card-text small text-muted">
+                    <span class="fe fe-clock"></span> <time >{{ item?.date | date }}</time>
+                  </p>
+
+                  <h3 class="text-center">{{ item?.title }}</h3>
+                  
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+            <!-- Text -->
+            <p [innerHTML]= "item?.description">
+                    
+            </p>
+            <p class="mb-4">
+              So, we dont have so much post here and instead of making this space useless, lets make it look great. Yaay!!
+              
+              </p>
+
+            <!-- Buttons -->
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+
+                  <a href="#!" class="btn btn-sm btn-white">
+                    😍 4
+                  </a>
+                  <a href="#!" class="btn btn-sm btn-white">
+                    👍 3
+                  </a>
+                  <a href="#!" class="btn btn-sm btn-white">
+                    {{ item?.tags }}
+                  </a>
+
+                </div>
+                <div class="col-auto">
+
+                <a href="#" class="btn btn-sm btn-primary">
+                        {{ item?.category }}
+                </a>
+                  <a href="#!" class="btn btn-sm btn-white">
+                    Share
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+            <!-- Divider -->
+            <hr>
+
+            <div class="mb-3" *ngIf="!comments || comments == 'No Content'">
+              No Content, Sonny
+            </div> 
+         
+
+            
+            <!-- Comments -->
+            <div *ngIf="comments || comments != 'No content'">
+              
+               <span *ngFor="let comm of comments">
+
+            <div class="comment mb-3" *ngIf="item.titleid == comm.titleid">
+              <div class="row">
+                <div class="col-auto">
+                  <!-- Avatar -->
+                  <a class="avatar" href="profile-posts.html">
+                    <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+
+                </div>
+                <div class="col ml-n2">
+                  
+                  <!-- Body -->
+                  <div class="comment-body">
+
+                    <div class="row">
+                      <div class="col">
+
+                        <!-- Title -->
+                        <h5 class="comment-title">
+                          {{comm.username}}
+                        </h5>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Time -->
+                        <time class="comment-time">
+                          {{comm.date}}
+                        </time>
+
+                      </div>
+                    </div> <!-- / .row -->
+
+                    <!-- Text -->
+                    <p class="comment-text">
+                      {{comm.body}}
+                    </p>
+
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+            </span>
+            
+
+            </div>   
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- Form -->
+            <div class="row">
+              <div class="col-auto">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm">
+                  <img src="assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+              </div>
+              <div class="col ml-n2">
+
+                <!-- Input -->
+                <form class="mt-1" [formGroup]="commentForm" (ngSubmit)="onSubmit(item)">
+                  <label class="sr-only">Leave a comment...</label>
+                  <textarea class="form-control form-control-flush" formControlName="body" data-toggle="autosize" rows="1" placeholder="Leave a comment"></textarea>
+                  <button type="submit" class="btn btn-sm btn-primary">Post</button>
+                </form>
+
+              </div>
+              <div class="col-auto align-self-end">
+                
+                <!-- Icons -->
+                <div class="text-muted mb-2">
+                  <a class="text-reset mr-3" href="#!" data-toggle="tooltip" title="Add photo">
+                    <i class="fe fe-camera"></i>
+                  </a>
+                  <a class="text-reset mr-3" href="#!" data-toggle="tooltip" title="Attach file">
+                    <i class="fe fe-paperclip"></i>
+                  </a>
+                  <a class="text-reset" href="#!" data-toggle="tooltip" title="Record audio">
+                    <i class="fe fe-mic"></i>
+                  </a>
+                </div>
+
+              </div>
+            </div> <!-- / .row -->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-xl-4">
+        
+        <!-- Card -->
+        <div class="card">
+          <div class="card-body">
+                <h3 class="text-center">Category</h3>
+            <div class=""  *ngFor="let c of cat" >
+            <div class="row align-items-center" >
+              <div class="col">
+                
+                <!-- Title -->
+                <a (click)="gotoCategoryDetails(category)" class="mb-0">
+                  {{ c?.name }}
+                </a>
+
+              </div>
+            </div> <!-- / .row -->
+                <hr>
+            <!-- Divider -->
+             </div>
+
+          </div>
+        </div>
+      </div>
+    </div> <!-- / .row -->
+  </div>
+
+
+  </div>

@@ -61,4 +61,9 @@ export class CategoryViewComponent implements OnInit {
     )
   }
 
+  gotoCategoryDetails(data){
+    this.global.categoryPosts = data;
+    this.router.navigate(['category-view']);
+  }
+
 }
