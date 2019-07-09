@@ -33,8 +33,8 @@ const routes: Routes = [
   { path: 'tickets', component: TicketComponent},
   { path: 'events', component: EventsComponent },
   { path: 'category-view', component: CategoryViewComponent },
+  { path: 'event-details', component: EventDetailsComponent },
   { path: '**', component: NotFoundComponent },
-  { path: 'event-details', component: EventDetailsComponent }
 ];
 
 @NgModule({

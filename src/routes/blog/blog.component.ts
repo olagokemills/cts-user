@@ -45,7 +45,6 @@ export class BlogComponent implements OnInit {
           console.log(res);
           this.message = 'Comment created successfully';
           this.success = true;
-
           location.reload();
 
         })

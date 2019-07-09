@@ -10,7 +10,6 @@ import { SignInComponent } from '../routes/sign-in/sign-in.component';
 import { SignUpComponent } from '../routes/sign-up/sign-up.component';
 import { ProfileComponent } from '../routes/profile/profile.component';
 import { NotFoundComponent } from '../routes/not-found/not-found.component';
-import { DashboardComponent } from '../routes/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from '../routes/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from '../routes/reset-password/reset-password.component';
 import { ProfileViewComponent } from '../routes/profile-view/profile-view.component';
@@ -23,14 +22,14 @@ import { HeaderComponent } from '../components/header/header.component';
 import { EventDetailsComponent } from 'src/routes/events-details/event-details.component';
 import { BlogComponent } from 'src/routes/blog/blog.component';
 import { CategoryViewComponent } from 'src/routes/category-view/category-view.component';
-
+import { FilterPipe } from './pipes/filter.pipe';
+import { DashboardComponent } from '../routes/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
     ProfileComponent,
-    NotFoundComponent,
     DashboardComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
@@ -43,7 +42,9 @@ import { CategoryViewComponent } from 'src/routes/category-view/category-view.co
     HeaderComponent,
     EventDetailsComponent,
     BlogComponent,
-    CategoryViewComponent
+    CategoryViewComponent,
+    FilterPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

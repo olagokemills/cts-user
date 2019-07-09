@@ -83,8 +83,7 @@ export class AuthService {
           headers: {
             "cache-control": "no-cache",
             "Accept-language": "en",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": "Bearer " + sessionStorage.getItem('x-lt')
+              "Authorization": "Bearer " + sessionStorage.getItem('x-lt')
           },
           mode: "cors",
           cache: "no-cache", 
@@ -161,7 +160,7 @@ export class AuthService {
       })
     }
     let data = JSON.parse(sessionStorage.getItem('ud'));
-    console.log(data);
+    //console.log(data);
     return this.http.get(url + 'posts/category', httpOption);
   }
   
@@ -175,7 +174,7 @@ export class AuthService {
       })
     }
     let data = JSON.parse(sessionStorage.getItem('ud'));
-   console.log(data);
+  // console.log(data);
     return this.http.get(url + 'posts/comments', httpOption);
   }
   
